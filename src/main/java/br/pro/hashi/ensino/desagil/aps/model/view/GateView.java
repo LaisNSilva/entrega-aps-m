@@ -97,22 +97,28 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
 
     @Override
     public void mouseClicked(MouseEvent event) {
-        int x = event.getX();
-        int y = event.getY();
+        int x_1 = event.getX();
+        int y_1 = event.getY();
+        int x_2 = event.getX();
+        int y_2 = event.getY();
 
-        if (Math.pow(x - 217, 2) + Math.pow(y - 120, 2) <= 156.25) {
+
+        if (Math.pow(x_1 - 217, 2) + Math.pow(y_1 - 120, 2) <= 156.25) {
 
             // ...então abrimos a janela seletora de cor...
             Color color = JColorChooser.showDialog(this, null, light.getColor());
-            //Color offColor = JColorChooser.showDialog(this, null, light.getColor());
             light.setColor(color);
-            //light.setColor(offColor);
+
 
             // ...e chamamos repaint para atualizar a tela.
             repaint();
 
 
+
+
         }
+
+
     }
 
     @Override
@@ -140,10 +146,13 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
 
         super.paintComponent(g);
 
-        g.drawImage(image, 30, 28, 180, 220, this);
+        g.drawImage(image, 30, 13, 180, 220, this);
 
         g.setColor(light.getColor());
-        g.fillOval(205, 125, 25, 25);
+        g.fillOval(205, 107, 25, 25);
+
+
+
 
         getToolkit().sync();
     }
