@@ -41,9 +41,9 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
         }
 
         int m = 0;
-        int medida = (250 / (gate.getInputSize()+1));
+        int medida = (250 / (gate.getInputSize() + 1));
         while (m < gate.getInputSize()) {
-            add(entradas[m],20, medida*(m+1)-15, 20, 25);
+            add(entradas[m], 20, medida * (m + 1) - 15, 20, 25);
             m++;
         }
 
@@ -112,8 +112,6 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
             repaint();
 
 
-
-
         }
 
 
@@ -148,8 +146,6 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
 
         g.setColor(light.getColor());
         g.fillOval(205, 107, 25, 25);
-
-
 
 
         getToolkit().sync();

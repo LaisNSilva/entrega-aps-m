@@ -10,7 +10,7 @@ public class Light implements Receiver {
     public Light(int r, int g, int b) {
         color = new Color(r, g, b);
         emitter = null;
-        offColor = new Color (0, 0, 0);
+        offColor = new Color(0, 0, 0);
     }
 
     public Color getColor() {
@@ -24,13 +24,6 @@ public class Light implements Receiver {
         this.offColor = color;
         this.color = color;
     }
-
-
-
-
-
-
-
 
 
     @Override
