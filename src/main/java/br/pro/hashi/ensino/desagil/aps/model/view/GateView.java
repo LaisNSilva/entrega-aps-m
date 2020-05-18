@@ -43,7 +43,7 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
         int m = 0;
         int medida = (250 / (gate.getInputSize()+1));
         while (m < gate.getInputSize()) {
-            add(entradas[m],20, medida*(m+1), 20, 25);
+            add(entradas[m],20, medida*(m+1)-15, 20, 25);
             m++;
         }
 
@@ -99,8 +99,6 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
     public void mouseClicked(MouseEvent event) {
         int x_1 = event.getX();
         int y_1 = event.getY();
-        int x_2 = event.getX();
-        int y_2 = event.getY();
 
 
         if (Math.pow(x_1 - 217, 2) + Math.pow(y_1 - 120, 2) <= 156.25) {
