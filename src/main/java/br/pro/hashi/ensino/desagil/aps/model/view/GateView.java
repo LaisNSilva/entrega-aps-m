@@ -37,16 +37,14 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
             entradas[i] = new JCheckBox();
             entradas[i].setMnemonic(KeyEvent.VK_C);
             entradas[i].setSelected(false);
-            if (gate.getInputSize() > 1) {
-                if (i == 0) {
-                    add(entradas[i], 20, 87, 20, 25);
-                } else if (i == 1) {
-                    add(entradas[i], 20, 127, 20, 25);
-                }
-            } else if (gate.getInputSize() == 1) {
-                add(entradas[i], 20, 107, 20, 25);
-            }
             i++;
+        }
+
+        int m = 0;
+        int medida = (250 / (gate.getInputSize()+1));
+        while (m < gate.getInputSize()) {
+            add(entradas[m],20, medida*(m+1), 20, 25);
+            m++;
         }
 
         JCheckBox saidaField = new JCheckBox();
@@ -138,10 +136,10 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
 
         super.paintComponent(g);
 
-        g.drawImage(image, 30, 70, 180, 100, this);
+        g.drawImage(image, 30, 28, 180, 220, this);
 
         g.setColor(light.getColor());
-        g.fillOval(205, 107, 25, 25);
+        g.fillOval(205, 125, 25, 25);
 
         getToolkit().sync();
     }
