@@ -104,10 +104,14 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
 
             // ...então abrimos a janela seletora de cor...
             Color color = JColorChooser.showDialog(this, null, light.getColor());
+            //Color offColor = JColorChooser.showDialog(this, null, light.getColor());
             light.setColor(color);
+            //light.setColor(offColor);
 
             // ...e chamamos repaint para atualizar a tela.
             repaint();
+
+
         }
     }
 
